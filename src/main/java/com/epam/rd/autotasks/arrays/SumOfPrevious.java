@@ -10,10 +10,16 @@ public class SumOfPrevious {
         System.out.println(Arrays.toString(getSumCheckArray(array)));
     }
 
-    public static boolean[] getSumCheckArray(int[] array){
-
+    public static boolean[] getSumCheckArray(int[] array) throws UnsupportedOperationException{
+        boolean[] resultArr = new boolean[array.length];
+        Arrays.fill(resultArr, false);
+        for(int i=2; i < array.length; i++){
+            if (array[i] == array[i-1]+array[i-2]){
+                resultArr[i] = true;
+            }
+        }
+        return (resultArr);
         //put your code here
 
-        throw new UnsupportedOperationException();
-    }
+            }
 }
